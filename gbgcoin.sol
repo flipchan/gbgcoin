@@ -19,7 +19,8 @@ contract GothenBurgCoin {
     	string public constant symbol = "GBGCOIN";
     	string public constant name = "Gothenburg Coin";
     	uint8 public constant decimals = 18;
-
+	list public votes = [];
+	int maxlimit constant = 7;//you are not allowed to vote higher then 7
 	string public payday = 'sunday';
 
 	event UpdateStatus(string meddelande, uint _amount); //public print
@@ -31,10 +32,14 @@ contract GothenBurgCoin {
 
 	weathermap[monday, tuesday, wednesday, thursday, friday, saturday, sunday] public weatherdays; // set item to true if it has rained that day and then count them to generate the output
 
+//guessdb
+	
 	struct weatherguess{
-		uint amountdays;
+		uint amountdays;//this shouldbe decimal compatable
 		address guesser;
 	}	//how many days is it gonna rain
+
+	event newvote(uint id){//pling plong we got a new vote 
 
 	modifier ifPayday(){	//check if it is the correct day to hand out the coin and if we got coin to hand out
         	if(currentday != payday && getFunds != 0){
@@ -43,6 +48,17 @@ contract GothenBurgCoin {
         	    _;
        		 }
     		}	
+
+// vote = the vote for amount of times it rains during week, 
+	function addvote() returns(boolean){	//#add grunden nu sen fixa syntax 
+		public votes += (name, address, vote)//# global python in solidity ??		
+		} return True
+
+// get current votes, this function should be "public"/be able to call by others
+	function public getcurrentvotes() returns(list){
+		return votes;
+		}
+
 
 	function whatdayisit() returns(string){//return today
 		return today;

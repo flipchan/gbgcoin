@@ -1,12 +1,12 @@
 # gbgcoin
 this is a fork of https://github.com/Anders-Linden 's claes coin that he talked about during a meetup
 
-##GothenBurg Coin
+## GothenBurg Coin
 a ethereum token | bet on amount it rains in gothenburg
 
 all dev is welcome
 
-
+This is my first ethereum and blockchain project 
 
 
 fork of https://github.com/ethgbg/claes.cash
